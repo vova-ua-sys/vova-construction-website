@@ -1,0 +1,41 @@
+<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VOVA Complete Construction</title><style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#09151b;color:#fff;font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
+.visual,.footer{width:min(1600px,100%);margin:auto;position:relative}.visual img,.footer img{width:100%;height:auto;display:block}
+.hit{position:absolute;display:block;z-index:5;background:transparent;border:0;cursor:pointer}.navhit:after{content:"";position:absolute;left:15%;right:15%;bottom:5px;height:2px;background:#18c9c8;transform:scaleX(0);transition:.18s}.navhit:hover:after{transform:scaleX(1)}
+.home{left:26%;top:1%;width:5%;height:6%}.serv{left:31.5%;top:1%;width:7%;height:6%}.proj{left:38.5%;top:1%;width:7%;height:6%}.about{left:45.5%;top:1%;width:7%;height:6%}.rev{left:52.5%;top:1%;width:6%;height:6%}.contact{left:58.5%;top:1%;width:6%;height:6%}.nl{left:70%;top:1%;width:3%;height:6%}.en{left:73%;top:1%;width:3%;height:6%}.quote{left:77%;top:.5%;width:14%;height:7%}.wa{left:10%;top:42%;width:11%;height:7%}.phone{left:21.5%;top:42%;width:13%;height:7%}
+.reviews{width:min(1600px,100%);margin:auto;padding:52px 6% 60px;background:#09151b;border-top:1px solid #20343d;border-bottom:1px solid #20343d}.k{color:#19c9c7;letter-spacing:.22em;font-size:12px;font-weight:800}h2{font-size:clamp(30px,3vw,45px);margin:8px 0}.sub{color:#a8b7bd;margin:0 0 28px}
+.cards{display:flex;gap:18px;overflow-x:auto;scrollbar-width:none;scroll-snap-type:x mandatory}.cards::-webkit-scrollbar{display:none}.card{flex:0 0 calc((100% - 36px)/3);scroll-snap-align:start;background:#102027;border:1px solid #20353d;border-radius:7px;padding:24px;min-height:185px}.stars{color:#19c9c7;font-size:21px;letter-spacing:2px}.card h3{font-size:15px;margin:14px 0 8px}.card p{font-size:14px;line-height:1.55;color:#d2dcdf}.note{font-size:11px;color:#71858d}.actions{display:flex;justify-content:space-between;align-items:center;margin-top:24px;gap:15px}.arrow{width:42px;height:42px;border-radius:50%;border:1px solid #2b4650;background:#10232b;color:white;font-size:22px;cursor:pointer}.cta{background:#19c9c7;color:#062126;text-decoration:none;font-weight:800;padding:14px 20px;border-radius:4px}
+.footer{background:#081218}.ig{left:43%;top:5%;width:5%;height:90%}.gg{left:48%;top:5%;width:5%;height:90%}.fw{left:52%;top:5%;width:5%;height:90%}.fc{right:5%;top:5%;width:9%;height:90%}
+.toast{display:none;position:fixed;z-index:50;top:18px;left:50%;transform:translateX(-50%);background:#10232b;border:1px solid #2a4650;padding:10px 15px;border-radius:6px}
+.mobile{display:none}
+@media(max-width:800px){.card{flex-basis:86%}.reviews{padding:38px 20px 72px}.actions{flex-direction:column;align-items:flex-start}.mobile{display:grid;position:fixed;z-index:40;bottom:0;left:0;right:0;grid-template-columns:1fr 1fr}.mobile a{padding:15px;text-align:center;text-decoration:none;font-weight:800}.mobile a:first-child{background:#19c9c7;color:#062126}.mobile a:last-child{background:white;color:#09151b}}
+</style></head><body>
+<div class="toast" id="toast"></div>
+<div class="visual" id="top"><img src="assets/main.jpg" alt="VOVA Complete Construction">
+<button class="hit navhit home" onclick="scrollTo(0,0)" aria-label="Home"></button>
+<button class="hit navhit serv" onclick="go(.53)" aria-label="Diensten"></button>
+<button class="hit navhit proj" onclick="go(.76)" aria-label="Projecten"></button>
+<button class="hit navhit about" onclick="go(.90)" aria-label="Over ons"></button>
+<a class="hit navhit rev" href="#reviews" aria-label="Reviews"></a>
+<a class="hit navhit contact" href="#footer" aria-label="Contact"></a>
+<button class="hit navhit nl" onclick="language('nl')" aria-label="NL"></button><button class="hit navhit en" onclick="language('en')" aria-label="EN"></button>
+<a class="hit quote" href="https://wa.me/31684282359?text=Hallo%20Vova%2C%20ik%20wil%20graag%20een%20offerte%20aanvragen." target="_blank" rel="noopener" aria-label="Offerte"></a>
+<a class="hit wa" href="https://wa.me/31684282359?text=Hallo%20Vova%2C%20ik%20wil%20graag%20een%20offerte%20aanvragen." target="_blank" rel="noopener" aria-label="WhatsApp"></a>
+<a class="hit phone" href="tel:+31684282359" aria-label="Bellen"></a></div>
+
+<section class="reviews" id="reviews"><div class="k">GOOGLE REVIEWS</div><h2 id="title">Wat klanten zeggen</h2><p class="sub" id="sub">Bekijk ervaringen van klanten of open alle beoordelingen direct op Google.</p>
+<div class="cards" id="cards">
+<article class="card"><div class="stars">★★★★★</div><h3>Google review</h3><p>Hier komt een echte recente Google-review zodra de live koppeling is ingesteld.</p><div class="note">Google Reviews</div></article>
+<article class="card"><div class="stars">★★★★★</div><h3>Google review</h3><p>Deze plaats is klaar voor een actuele beoordeling van een klant.</p><div class="note">Google Reviews</div></article>
+<article class="card"><div class="stars">★★★★★</div><h3>Google review</h3><p>Nieuwe beoordelingen kunnen later automatisch in deze carrousel verschijnen.</p><div class="note">Google Reviews</div></article>
+<article class="card"><div class="stars">★★★★★</div><h3>Google review</h3><p>Een vierde actuele beoordeling kan hier met de pijlen worden bekeken.</p><div class="note">Google Reviews</div></article></div>
+<div class="actions"><div><button class="arrow" onclick="slideR(-1)">‹</button> <button class="arrow" onclick="slideR(1)">›</button></div><a class="cta" id="rb" href="https://maps.app.goo.gl/g3yP4LmfGALqyxBt6?g_st=ic" target="_blank" rel="noopener">Bekijk alle Google Reviews →</a></div></section>
+
+<div class="footer" id="footer"><img src="assets/footer.jpg" alt="VOVA footer">
+<a class="hit ig" href="https://www.instagram.com/vova_complete_construction" target="_blank" rel="noopener" aria-label="Instagram"></a><a class="hit gg" href="https://maps.app.goo.gl/g3yP4LmfGALqyxBt6?g_st=ic" target="_blank" rel="noopener" aria-label="Google"></a><a class="hit fw" href="https://wa.me/31684282359?text=Hallo%20Vova%2C%20ik%20wil%20graag%20een%20offerte%20aanvragen." target="_blank" rel="noopener" aria-label="WhatsApp"></a><a class="hit fc" href="mailto:info@vovaconstruction.nl" aria-label="Email"></a></div>
+<div class="mobile"><a href="https://wa.me/31684282359?text=Hallo%20Vova%2C%20ik%20wil%20graag%20een%20offerte%20aanvragen." target="_blank">WhatsApp</a><a href="tel:+31684282359">Bellen</a></div>
+<script>
+function go(f){let e=document.querySelector('.visual');window.scrollTo({top:e.offsetHeight*f,behavior:'smooth'})}function slideR(d){cards.scrollBy({left:d*360,behavior:'smooth'})}
+function language(l){let en=l==='en';title.textContent=en?'What clients say':'Wat klanten zeggen';sub.textContent=en?'Read client experiences or open all reviews directly on Google.':'Bekijk ervaringen van klanten of open alle beoordelingen direct op Google.';rb.textContent=en?'View all Google Reviews →':'Bekijk alle Google Reviews →';toast.textContent=en?'English selected':'Nederlands geselecteerd';toast.style.display='block';setTimeout(()=>toast.style.display='none',1000)}
+</script></body></html>
