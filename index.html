@@ -40,21 +40,54 @@
 @media(max-width:480px){.site-header{padding-inline:12px}.hero-copy{width:88%;min-height:360px}.hero-features{grid-template-columns:1fr}.service-copy{grid-template-columns:1fr}.service-copy div,.service-copy div:nth-child(3n){min-height:164px;border-right:0}}
 @media(prefers-reduced-motion:reduce){.project-card,.project-card img,.filter{transition:none}}
 
-/* VOVA hero refinement: genuinely centered navigation and consistent service icons */
-@media (min-width:801px){
-.site-header{left:0;right:0;padding:0 5.8%;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);column-gap:18px}
-.main-nav{grid-column:2;justify-self:center;gap:clamp(12px,1.6vw,30px)}
-.brand{grid-column:1;max-width:100%}
-.header-tools{grid-column:3;justify-self:end}
-.hero-copy{top:13.25%;height:auto;min-height:49%;padding-top:2.2%}
-.hero-features{left:5.8%;right:5.8%;top:65%;height:7.5%;padding:0 10px;box-shadow:none;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
-.service-copy{top:73%;height:27%;left:5.8%;right:5.8%}
-.service-copy div{grid-template-rows:50px auto auto;gap:6px;padding:18px 8px 12px}
+
+/* Unified responsive hero layout; no absolute offsets for content rows */
+.visual{aspect-ratio:auto;overflow:hidden;background:#07171c}
+.visual>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;pointer-events:none}
+.site-header{position:relative;inset:auto;display:grid;width:100%;height:auto;min-height:90px;padding:12px 4%;grid-template-columns:minmax(160px,1fr) auto minmax(160px,1fr);gap:14px;align-items:center;background:#071318}
+.site-header:before{display:none}
+.brand{grid-column:1;grid-row:1;transform:scale(.78);transform-origin:left center;max-width:100%}
+.main-nav{grid-column:2;grid-row:1;justify-self:center;gap:clamp(10px,1.2vw,24px)}
+.header-tools{grid-column:3;grid-row:1;justify-self:end;gap:10px}
+.hero-copy{position:relative;inset:auto;width:min(550px,55%);height:auto;min-height:380px;margin:0 0 0 5.8%;padding:45px 0 35px}
+.hero-copy:before{inset:0 -8% 0 -18%}
+.hero-features{position:relative;inset:auto;width:100%;height:auto;min-height:76px;padding:18px 5.8%;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;background:#07171c;box-shadow:none}
+.hero-features span{display:flex;align-items:center;min-width:0}
+.hero-features span:before{flex:0 0 auto}
+.service-copy{position:relative;inset:auto;width:100%;height:auto;min-height:185px;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));background:#07171c}
+.service-copy div{display:grid;grid-template-rows:50px auto auto;align-content:start;justify-items:center;gap:7px;min-width:0;padding:20px 8px 16px}
+.service-icon{width:48px;height:48px;display:grid;place-items:center}
+.service-icon svg{width:40px;height:40px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.service-copy strong{line-height:1.25;overflow-wrap:normal}
+.service-copy small{line-height:1.35;overflow-wrap:normal}
+@media(max-width:1200px){
+.site-header{grid-template-columns:1fr auto;grid-template-rows:auto auto;row-gap:10px}
+.brand{grid-column:1;grid-row:1}
+.header-tools{grid-column:2;grid-row:1}
+.main-nav{grid-column:1/-1;grid-row:2;justify-self:center;flex-wrap:wrap}
+.service-copy{grid-template-columns:repeat(3,minmax(0,1fr))}
+.service-copy div{min-height:170px;border-bottom:1px solid #20343d}
+.service-copy div:nth-child(3n){border-right:0}
 }
-.service-icon svg{width:42px;height:42px;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;overflow:visible}
-.service-copy strong{line-height:1.22}
-.service-copy small{line-height:1.35}
-@media (min-width:801px) and (max-width:1100px){.site-header{padding:0 3%}.brand{transform:scale(.75);transform-origin:left center}.main-nav{gap:10px}.header-quote{padding:9px 12px}.hero-features{font-size:10px}.hero-features span:before{width:15px;height:15px;margin-right:5px}}
+@media(max-width:800px){
+.visual>img{height:540px}
+.site-header{padding:12px 18px}
+.brand{transform:scale(.7);width:170px}
+.hero-copy{width:min(470px,82%);min-height:340px;margin-left:0;padding:38px 20px}
+.hero-features{grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;padding:20px}
+.service-copy{grid-template-columns:repeat(2,minmax(0,1fr))}
+.service-copy div:nth-child(3n){border-right:1px solid #20343d}
+.service-copy div:nth-child(2n){border-right:0}
+}
+@media(max-width:480px){
+.site-header{padding:10px 12px}
+.header-tools{gap:5px}
+.main-nav{gap:9px;font-size:11px}
+.hero-copy{width:90%}
+.hero-features{grid-template-columns:1fr}
+.service-copy{grid-template-columns:1fr}
+.service-copy div,.service-copy div:nth-child(3n){border-right:0}
+}
 </style></head><body>
 <div class="toast" id="toast"></div>
 <div class="visual" id="top"><img src="assets/main.jpg" alt="VOVA Complete Construction">
