@@ -138,6 +138,30 @@
 
 /* Restore the original warm wood-panel hero image, without duplicate overlays. */
 .visual>img{object-position:center top}
+
+/* Single-source layout: source hero JPG is a flattened older mockup.
+   Hide its embedded old service/checkmark rows below the photographic area. */
+.visual{aspect-ratio:auto!important;min-height:0!important;display:flex;flex-direction:column;isolation:isolate;overflow:hidden;background:#07171c}
+.visual>img{position:absolute!important;inset:0 auto auto 0!important;width:100%!important;height:auto!important;min-height:0!important;max-height:none!important;object-fit:fill!important;object-position:top!important;opacity:1!important;clip-path:inset(0 0 25% 0);z-index:0}
+.visual:before{position:absolute!important;inset:0 0 auto!important;height:clamp(420px,32.5vw,525px)!important;background:linear-gradient(90deg,rgba(4,17,22,.97) 0%,rgba(4,17,22,.91) 23%,rgba(4,17,22,.6) 37%,transparent 61%)!important;z-index:1;pointer-events:none}
+.site-header{position:relative!important;left:auto!important;right:auto!important;top:auto!important;flex:none;width:100%!important;max-width:1400px!important;height:84px!important;margin:0 auto!important;padding:0 3%!important;display:grid!important;grid-template-columns:minmax(150px,1fr) auto minmax(215px,1fr)!important;z-index:10!important}
+.site-header:before{display:none!important}
+.hero-copy{position:relative!important;left:auto!important;top:auto!important;width:min(460px,43%)!important;height:auto!important;flex:none;margin:15px 0 0 max(6%,calc((100% - 1400px)/2 + 38px))!important;padding:12px 0 0!important;z-index:3!important}
+.hero-copy h1{font-size:clamp(34px,3.5vw,55px)!important;line-height:1.03!important;margin:12px 0!important}
+.hero-copy p{font-size:clamp(13px,1.05vw,16px)!important;line-height:1.4!important;margin:0 0 19px!important}
+.hero-copy:before{display:none!important}
+.hero-actions{flex-wrap:wrap}
+.hero-features{position:relative!important;left:auto!important;right:auto!important;top:auto!important;width:100%!important;min-height:65px!important;height:auto!important;margin-top:64px!important;padding:15px max(6%,calc((100% - 1400px)/2 + 38px))!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;background:#07171c!important;box-shadow:none!important;z-index:5!important}
+.hero-features span{font-size:clamp(11px,.9vw,14px);white-space:normal}
+.service-copy{position:relative!important;left:auto!important;right:auto!important;top:auto!important;width:100%!important;height:auto!important;min-height:155px!important;margin:0!important;padding:0 max(5%,calc((100% - 1400px)/2 + 20px)) 14px!important;display:grid!important;grid-template-columns:repeat(7,minmax(0,1fr))!important;background:#07171c!important;z-index:6!important}
+.service-copy .service-item{border-right:1px solid #20343d;min-width:0!important;min-height:135px;padding:18px 6px 8px!important;display:flex!important;align-items:center;gap:6px}
+.service-copy .service-item:last-child{border:0}
+.service-icon{display:flex!important;align-items:center;justify-content:center;width:43px;height:43px;flex:none}
+.service-icon svg{display:block;width:37px;height:37px;fill:none;stroke:#19c9c7;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.service-copy strong{font-size:clamp(11px,.95vw,15px)!important;line-height:1.2}
+.service-copy small{font-size:clamp(10px,.76vw,12px)!important;line-height:1.3}
+@media(max-width:1050px){.site-header{grid-template-columns:1fr auto!important;height:auto!important;min-height:84px;gap:12px}.main-nav{grid-column:1!important;grid-row:2;flex-wrap:wrap;justify-content:flex-start}.header-tools{grid-column:2!important;grid-row:1}.hero-copy{width:55%!important;margin-left:5%!important}.hero-features{margin-top:75px!important;padding:15px 5%!important;grid-template-columns:repeat(2,minmax(0,1fr))!important}.service-copy{grid-template-columns:repeat(4,minmax(0,1fr))!important}}
+@media(max-width:650px){.visual>img{width:auto!important;height:570px!important;max-width:none!important;object-fit:cover!important;object-position:55% top!important;clip-path:inset(0 0 15% 0)}.visual:before{height:485px!important;background:linear-gradient(90deg,rgba(4,17,22,.96),rgba(4,17,22,.55))!important}.site-header{display:flex!important;flex-direction:column;align-items:stretch;height:auto!important;padding:16px 5%!important}.main-nav{gap:12px!important}.header-tools{justify-self:auto;justify-content:space-between}.header-quote{padding:10px 14px}.hero-copy{width:90%!important;margin:25px 5% 0!important}.hero-copy h1{font-size:clamp(35px,9vw,48px)!important}.hero-features{margin-top:75px!important;gap:14px!important}.service-copy{grid-template-columns:repeat(2,minmax(0,1fr))!important;padding:0 4% 12px!important}.service-copy .service-item{min-height:135px}}
 </style></head><body>
 <div class="toast" id="toast"></div>
 <div class="visual" id="top"><img src="assets/main.jpg" alt="Warm interior with wooden slat wall, television and Quality in every details lettering">
