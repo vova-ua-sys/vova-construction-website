@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VOVA — Header preview</title>
+<style>
+:root{--cyan:#17d3de;--dark:#071219;--white:#f6fbfd}*{box-sizing:border-box}
+body{margin:0;background:#071219;color:var(--white);font-family:Arial,Helvetica,sans-serif}
+a{color:inherit;text-decoration:none}button{font:inherit}
+.site-header{position:relative;z-index:10;background:#07131b;border-bottom:1px solid #1b3038}
+.header-inner{max-width:1440px;min-height:76px;margin:auto;padding:12px clamp(18px,4vw,58px);display:flex;align-items:center;gap:clamp(16px,2.3vw,36px)}
+.brand{display:flex;align-items:center;flex-shrink:0;gap:9px;min-width:180px}
+.brand-mark{font-size:43px;line-height:1;font-weight:900;letter-spacing:-9px;color:var(--cyan);padding-right:9px}
+.brand-text{display:flex;flex-direction:column}.brand-name{font-size:28px;letter-spacing:3px;line-height:1}.brand-sub{font-size:7px;letter-spacing:1.2px;margin-top:5px}
+.nav{display:flex;align-items:center;justify-content:center;gap:clamp(13px,1.6vw,26px);flex:1}
+.nav a{font-size:13px;font-weight:700;white-space:nowrap}.nav a:hover,.nav a:focus-visible{color:var(--cyan)}
+.header-actions{display:flex;align-items:center;gap:15px;flex-shrink:0}
+.lang{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:800}
+.lang button{border:0;background:none;color:#d2e1e6;padding:5px;cursor:pointer}
+.lang button[aria-pressed=true]{color:var(--cyan)}.lang span{color:#61747d}
+.quote{background:var(--cyan);color:#031319;border-radius:30px;padding:13px 20px;font-size:12px;font-weight:800;white-space:nowrap}
+.menu-toggle{display:none;border:1px solid #29434c;border-radius:6px;background:#10242d;color:white;padding:9px 12px;cursor:pointer}
+.preview{min-height:320px;display:grid;place-content:center;text-align:center;padding:40px 24px;background:linear-gradient(115deg,#061219,#142b33)}
+.preview h1{font-size:clamp(26px,4vw,48px);margin:0 0 12px}.preview p{color:#b4c6cb;margin:0;line-height:1.5}
+@media(max-width:1120px){.header-inner{flex-wrap:wrap}.brand{min-width:auto}.nav{order:3;flex-basis:100%;justify-content:center;padding:8px 0 2px}.header-actions{margin-left:auto}}
+@media(max-width:650px){.header-inner{min-height:70px;gap:10px}.brand-mark{font-size:35px}.brand-name{font-size:22px}.brand-sub{font-size:6px}.quote{padding:10px 12px;font-size:11px}.lang{gap:2px}.header-actions{gap:6px}.menu-toggle{display:block}.nav{display:none;order:3;flex-basis:100%;flex-direction:column;align-items:stretch;gap:0;padding:5px 0}.nav.open{display:flex}.nav a{padding:13px 6px;border-top:1px solid #1b3038}.header-inner{padding:10px 14px}}
+@media(max-width:380px){.brand-text{display:none}.quote{font-size:10px;padding:10px}.brand-mark{font-size:33px}}
+</style></head>
+<body>
+<header class="site-header"><div class="header-inner">
+<a class="brand" href="../index.html" aria-label="VOVA Complete Construction home"><span class="brand-mark" aria-hidden="true">V</span><span class="brand-text"><span class="brand-name">VOVA</span><span class="brand-sub">COMPLETE CONSTRUCTION</span></span></a>
+<nav class="nav" id="mainNav" aria-label="Main navigation">
+<a href="../index.html" data-nl="Home" data-en="Home">Home</a>
+<a href="../index.html" data-nl="Diensten" data-en="Services">Diensten</a>
+<a href="../index.html#projects" data-nl="Projecten" data-en="Projects">Projecten</a>
+<a href="../index.html" data-nl="Over ons" data-en="About us">Over ons</a>
+<a href="../index.html#reviews" data-nl="Reviews" data-en="Reviews">Reviews</a>
+<a href="../index.html#footer" data-nl="Contact" data-en="Contact">Contact</a>
+</nav>
+<div class="header-actions"><div class="lang" aria-label="Language"><button type="button" data-lang="nl" aria-pressed="true">NL</button><span>|</span><button type="button" data-lang="en" aria-pressed="false">EN</button></div>
+<a class="quote" data-nl="Offerte aanvragen" data-en="Request a quote" href="https://wa.me/31684282359?text=Hallo%20Vova%2C%20ik%20wil%20graag%20een%20offerte%20aanvragen." target="_blank" rel="noopener">Offerte aanvragen</a>
+<button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="mainNav" aria-label="Open menu">☰</button></div>
+</div></header>
+<main class="preview"><h1 data-nl="Voorbeeld van de nieuwe header" data-en="New header preview">Voorbeeld van de nieuwe header</h1><p data-nl="Alleen een testversie. De bestaande website is niet gewijzigd." data-en="Preview only. Your live website has not been changed.">Alleen een testversie. De bestaande website is niet gewijzigd.</p></main>
+<script>
+const nav=document.getElementById('mainNav'),toggle=document.getElementById('menuToggle');
+toggle.addEventListener('click',()=>{const open=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));toggle.textContent=open?'✕':'☰'});
+document.querySelectorAll('[data-lang]').forEach(button=>button.addEventListener('click',()=>{const lang=button.dataset.lang;document.documentElement.lang=lang;document.querySelectorAll('[data-nl][data-en]').forEach(el=>{el.textContent=el.dataset[lang]});document.querySelectorAll('[data-lang]').forEach(el=>el.setAttribute('aria-pressed',String(el.dataset.lang===lang)));}));
+</script></body></html>
