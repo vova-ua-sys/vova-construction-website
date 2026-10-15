@@ -94,9 +94,29 @@
 /* Cover the redundant baked-in trust badge in the hero artwork only.
    The actual trust badges remain in their separate row below. */
 .visual:after{content:"";position:absolute;z-index:2;pointer-events:none;left:44%;top:0;width:23%;height:0}
+/* Clean photographic hero: text and controls are actual HTML, never baked into the image. */
+.visual{min-height:680px;aspect-ratio:auto;background:#071318}
+.visual>img{position:absolute;inset:0;width:100%;height:72%;object-fit:cover;object-position:center;opacity:.84}
+.visual:before{content:"";position:absolute;z-index:1;inset:0 0 28%;pointer-events:none;background:linear-gradient(90deg,#071318 0%,rgba(7,19,24,.97) 18%,rgba(7,19,24,.78) 37%,rgba(7,19,24,.08) 75%)}
+.site-header{left:0;right:0;height:90px;padding:0 6%;grid-template-columns:minmax(190px,1fr) auto minmax(190px,1fr);background:rgba(7,19,24,.96)}
+.site-header:before{display:none}
+.brand{width:190px;height:auto;min-height:64px;transform:none;background:none;display:flex;align-items:center;text-decoration:none}
+.brand:after{content:"VOVA";font-size:35px;font-weight:300;letter-spacing:.13em;color:#fff}
+.brand:before{content:"V";font-size:39px;font-weight:900;color:#19c9c7;margin-right:-4px}
+.hero-copy{top:105px;left:6%;height:auto;min-height:320px;width:min(440px,43%);padding:26px 0}
+.hero-copy:before{display:none}
+.hero-copy h1{font-size:clamp(30px,3.5vw,54px);line-height:1.02}
+.hero-copy p{font-size:clamp(13px,1.08vw,17px)}
+.hero-features{top:475px;left:6%;right:6%;height:62px;background:#07171c;box-shadow:none;padding:0 12px;gap:12px}
+.service-copy{top:537px;left:0;right:0;height:143px;padding:0 6%;background:#07171c}
+.service-copy div{padding:14px 7px 8px;grid-template-rows:43px auto auto;gap:4px}
+.service-icon{height:43px;width:43px}
+.service-icon svg{width:36px;height:36px}
+@media(max-width:900px){.visual{min-height:850px}.site-header{position:relative;height:auto;min-height:110px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding:12px 5%}.main-nav{order:3;width:100%;flex-wrap:wrap;justify-content:center}.header-tools{margin-left:auto}.visual>img{height:480px;top:110px}.visual:before{inset:110px 0 auto;height:480px}.hero-copy{top:145px;left:6%;width:80%;max-width:420px}.hero-features{top:590px;left:0;right:0;grid-template-columns:repeat(2,minmax(0,1fr));height:95px;padding:12px 6%}.service-copy{top:685px;height:165px;padding:0 2%}}
+@media(max-width:600px){.visual{min-height:1120px}.site-header{min-height:155px}.brand{width:125px}.brand:after{font-size:24px}.brand:before{font-size:27px}.header-quote{padding:9px;font-size:11px}.main-nav{font-size:11px}.visual>img{top:155px;height:450px}.visual:before{top:155px;height:450px}.hero-copy{top:205px;width:88%;padding:0}.hero-copy h1{font-size:36px}.hero-actions{flex-wrap:wrap}.hero-features{top:605px;height:115px;gap:8px}.hero-features span:before{width:16px;height:16px;margin-right:5px}.service-copy{top:720px;height:400px;grid-template-columns:repeat(2,minmax(0,1fr))}.service-copy div{border-right:0;border-bottom:1px solid #20343d;padding:9px 4px;grid-template-rows:37px auto auto}.service-icon,.service-icon svg{width:32px;height:32px}}
 </style></head><body>
 <div class="toast" id="toast"></div>
-<div class="visual" id="top"><img src="assets/main.jpg" alt="VOVA Complete Construction">
+<div class="visual" id="top"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=85" alt="Modern interior with warm lighting">
 <header class="site-header"><a class="brand" href="#top" aria-label="VOVA Complete Construction home"></a><nav class="main-nav" aria-label="Hoofdnavigatie"><a href="#top" data-i18n="navHome">Home</a><a href="#services" data-i18n="navServices">Diensten</a><a href="#projects" data-i18n="navProjects">Projecten</a><a href="#about" data-i18n="navAbout">Over ons</a><a href="#reviews" data-i18n="navReviews">Reviews</a><a href="#footer" data-i18n="navContact">Contact</a></nav><div class="header-tools"><div class="language-switch" aria-label="Taal kiezen"><button type="button" data-lang="nl" class="active" aria-label="Nederlands">NL</button><button type="button" data-lang="en" aria-label="English">EN</button></div><a class="header-quote" href="https://wa.me/31684282359?text=Hallo%20Vova%2C%20ik%20wil%20graag%20een%20offerte%20aanvragen." target="_blank" rel="noopener" data-i18n="quote">Offerte aanvragen</a></div></header>
 <div class="hero-copy" id="about"><div class="eyebrow" data-i18n="heroEyebrow">INTERIEUR &amp; EXTERIEUR</div><h1 data-i18n-html="heroTitle">Jouw partner<br>voor een<br><span>mooier thuis</span></h1><p data-i18n="heroText">Vova Complete Construction – vakmanschap in schilderwerk, stucwerk, vloeren, tegelwerk en complete renovaties.</p><div class="hero-actions"><a class="hero-wa" href="https://wa.me/31684282359?text=Hallo%20Vova%2C%20ik%20wil%20graag%20een%20offerte%20aanvragen." target="_blank" rel="noopener" data-i18n="whatsapp">WhatsApp</a><a class="hero-phone" href="tel:+31684282359"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.3 3.5 10 8l-2.1 1.8a15.5 15.5 0 0 0 6.3 6.3L16 14l4.5 2.7-.7 3.3c-.2.8-.9 1.4-1.7 1.4A15.5 15.5 0 0 1 2.6 5.9c0-.8.6-1.5 1.4-1.7l3.3-.7Z"/></svg>06 8428 3359</a></div></div>
 <div class="hero-features"><span data-i18n="featureCraft">Vakkundig werk</span><span data-i18n="featurePrice">Eerlijke prijzen</span><span data-i18n="featureRegion">Den Haag en omgeving</span><span data-i18n="featureClients">Tevreden klanten</span></div>
